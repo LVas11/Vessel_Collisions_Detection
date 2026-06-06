@@ -1,0 +1,8 @@
+Data/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.tar
+spark-warehouse/
+derby.log
+metastore_db/

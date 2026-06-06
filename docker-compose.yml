@@ -1,0 +1,13 @@
+
+services:
+  ais-detector:
+    build: .
+    image: ais-collision-detector:latest
+    container_name: ais_collision_run
+    environment:
+      - DATA_GLOB=/Data/aisdk-2021-12-*.csv
+      - OUTPUT_DIR=/output
+    volumes:
+      - ./Data:/data:ro
+      - ./output:/output
+    shm_size: "2gb"
