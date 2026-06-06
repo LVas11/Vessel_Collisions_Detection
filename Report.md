@@ -79,15 +79,21 @@ also collected for comparison and checks.
 
 The procedure identified the following as the most likely collision event:
 
-AIS COLLISION DETECTION: RESULTS
-========================================
+### AIS COLLISION DETECTION: RESULTS
 Vessel A MMSI: 219021240
+
 Vessel A Name: KARIN HOEJ
+
 Vessel B MMSI: 232018267
+
 Vessel B Name: MV SCOT CARRIER
+
 Timestamp: 2021-12-13 02:27:18
+
 Latitude: 55.223184
+
 Longitude: 14.244365
+
 Min distance: 16.9 m
 
 The results are also included in the output files. 
