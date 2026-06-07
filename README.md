@@ -13,8 +13,6 @@ The solution uses:
 ## Repository Structure
 
 ```
-ais_collision/
-│
 ├── src/
 │   ├── collision_detector.py
 │   └── visualize.py
@@ -46,7 +44,7 @@ ais_collision/
 
 Data used: Danish AIS Data (http://aisdata.ais.dk/) for December 2021.
 
-The solution expects Danish AIS CSV files placed in a local directory named `Data/`, which is mounted into the container at `/data`.
+The code/docker expects Danish AIS CSV files placed in a local directory named `Data/`, which is mounted into the container at `/data`.
 
 Example:
 
@@ -57,16 +55,28 @@ Data/
 ├── aisdk-2021-12-14.csv
 └── ...
 ```
+## Docker Image Tag
 
-The data is not pushed to the repository due to its size.
+```
+lvas55/ais-collision-detector
+```
 
-## Building the Docker Image
+## Commands for Running the Docker Hub Image
+
+```
+docker run --rm `
+  -v "${PWD}\Data:/data" `
+  -v "${PWD}\output:/output" `
+  lvas55/ais-collision-detector:latest
+```
+
+## Commands Used for Building the Docker Image
 
 ```bash
 docker compose build
 ```
 
-## Running
+## Running (from source)
 
 Process all AIS files in `Data/`:
 
@@ -80,15 +90,6 @@ Process a specific file:
 docker compose run --rm -e DATA_GLOB="/data/aisdk-2021-12-*.csv" ais-detector
 ```
 
-## Submitted Docker Image
-
-A compiled Docker image is provided as `ais-collision-detector.tar`.
-
-Load it with:
-
-```bash
-docker load -i ais-collision-detector.tar
-```
 
 ## Output Files
 
