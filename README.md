@@ -58,10 +58,10 @@ Data/
 ## Docker Image Tag
 
 ```
-lvas55/ais-collision-detector
+lvas55/ais-collision-detector:latest
 ```
 
-## Commands for Running the Docker Hub Image
+## Commands for Running the Docker Hub Image (PowerShell)
 
 ```
 docker run --rm `
@@ -70,7 +70,7 @@ docker run --rm `
   lvas55/ais-collision-detector:latest
 ```
 
-## Commands Used for Building the Docker Image
+## Commands Used for Building the Docker Image (from source)
 
 ```bash
 docker compose build
@@ -84,7 +84,7 @@ Process all AIS files in `Data/`:
 docker compose run --rm ais-detector
 ```
 
-Process a specific file:
+Process a specific file(s):
 
 ```bash
 docker compose run --rm -e DATA_GLOB="/data/aisdk-2021-12-*.csv" ais-detector
